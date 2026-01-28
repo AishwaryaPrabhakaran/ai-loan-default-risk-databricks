@@ -8,4 +8,4 @@ modeling decisions, and business impact:
 ## 📊 Presentation Deck
 
 The presentation used in the walkthrough is available here:
-- [Download Presentation (PDF)](presentation/AI_Loan_Default_Risk_Predictions_Presentation.pdf)
+- [Download Presentation (PDF)](AI_Loan_Default_Risk_Predictions_Presentation.pdf)
