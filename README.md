@@ -56,13 +56,18 @@ This enables banks to reduce default-related losses while improving approval spe
 
 ---
 
-## Data Overview
+## Dataset Overview
 
-- **Dataset:** Home Credit Default Risk (Kaggle)  
-- **Primary Table:** `application_train.csv`  
+- **Dataset:** Home Credit Default Risk
+- **Source:** Kaggle  
+  https://www.kaggle.com/competitions/home-credit-default-risk/data
 
-The dataset represents real-world loan application data used to assess default risk.
+The dataset contains real-world loan application records used to predict whether a borrower will default on a loan. It includes applicant demographics, financial attributes, and credit-related information.
 
+The data is highly imbalanced, which makes it well-suited for demonstrating:
+- Risk ranking instead of binary classification
+- Business-aligned evaluation using ROC-AUC
+- Probability-based decision systems
 ---
 
 ## Architecture (Medallion Pattern)
