@@ -6,33 +6,43 @@
 **Hashtags:**  
 #ResumeProjectChallenge #DatabricksWithIDC #Codebasics  
 
+### This project demonstrates an end-to-end AI-driven credit risk decision system built on Databricks.  
+### The focus is not only on model training, but on converting predictions into real, explainable business decisions.
 ---
+## 📽️ Project Walkthrough
 
+▶️ Video (10 mins, unlisted): https://youtu.be/V0JOPDGC_Xo  
+
+## 📊 Presentation Deck
+
+The presentation used in the walkthrough is available here:
+- [Download Presentation (PDF)](presentation/Databricks_Project_Presentation.pdf)
+
+---
 ## Problem Statement
 
-Loan approval is a critical decision for banks, directly impacting profitability, risk exposure, and customer experience.  
-Traditional rule-based credit approval systems rely on fixed thresholds (such as income limits, credit scores, or employment type) and often treat large groups of customers in the same way.
+Loan approval is a critical decision for banks, directly affecting profitability, risk exposure, and customer experience.
+Traditional rule-based credit approval systems rely on fixed thresholds such as income limits, credit scores, or employment type. These systems often treat large groups of applicants uniformly, ignoring complex risk patterns.
 
 This approach creates two major challenges:
 
 ### Financial Loss from Defaults
-Banks approve loans for applicants who appear eligible under simple rules but later default due to complex risk patterns that static rules fail to capture.
+Applicants who pass simple rules may still default due to hidden risk factors.
 
 ### Missed Revenue and Operational Inefficiency
-Low-risk customers are frequently subjected to the same manual reviews as higher-risk applicants, slowing down approvals, increasing operational costs, and reducing customer satisfaction.
+Low-risk customers undergo unnecessary manual reviews, slowing approvals and increasing costs.
 
 ---
 
 ## Why an AI-Driven System Is Needed
 
-Loan default risk depends on multiple interacting factors such as income, credit amount, employment stability, family structure, and repayment burden. These relationships are often non-linear and evolve over time, making static rule-based systems insufficient.
+Loan default risk depends on multiple interacting factors such as income, credit amount, employment stability, family structure, and repayment burden. These relationships are often non-linear and evolve over time.
 
 An AI-driven system can:
 - Learn risk patterns from historical loan outcomes
-- Estimate the probability of default for each applicant
-- Rank customers by risk instead of treating them uniformly
-- Adapt more effectively than fixed rules as customer behavior changes
-
+- Estimate default probability for each applicant
+- Rank customers by relative risk instead of treating all applicants equally
+- Adapt better than fixed rules as customer behavior changes
 ---
 
 ## Objective
@@ -81,32 +91,36 @@ Missing numeric values are handled using **median imputation**, which is robust 
 
 ## Model & Evaluation
 
-- **Model:** Logistic Regression (Spark ML)  
-- **Evaluation Metrics:**  
-  - AUC-ROC (primary)  
-  - Accuracy (secondary)  
+**Model:** Logistic Regression (Spark ML)
+
+**Evaluation Metrics:**
+- ROC-AUC (primary)
+- Accuracy (secondary)
 
 **Results:**
-- AUC ≈ **0.61**  
-- Accuracy ≈ **0.92**
+- ROC-AUC ≈ 0.61  
+- Accuracy ≈ 0.92  
 
-Due to significant class imbalance in loan default data, AUC is the preferred metric as it better reflects the model’s ability to rank risky customers.
+Due to significant class imbalance in loan default data, accuracy is misleading.  
+ROC-AUC is preferred as it reflects the model’s ability to **rank risky applicants**, which aligns with business needs.
+
+Model experiments, metrics, and evaluation artifacts (ROC Curve and Confusion Matrix) were tracked using **MLflow**.
 
 ---
 
 ## AI Decision System (Beyond Just Training)
 
-Rather than stopping at predictions, this project implements an AI-driven decision layer.
+Instead of stopping at predictions, this project implements a decision layer.
 
 Model outputs are converted into:
 - Default probability scores
-- **Adaptive, quantile-based risk buckets**
+- Quantile-based risk buckets (Low, Medium, High)
 - Recommended credit actions
 
-**Observed default rates by risk bucket:**
-- Low Risk ≈ **6%**  
-- Medium Risk ≈ **11%**  
-- High Risk ≈ **14%**
+**Indicative default rates by risk bucket:**
+- Low Risk ≈ 6%
+- Medium Risk ≈ 11%
+- High Risk ≈ 14%
 
 This demonstrates effective risk separation and supports operational decision-making.
 
@@ -138,8 +152,15 @@ This project demonstrates a complete AI system lifecycle rather than isolated mo
 
 ---
 
-## Challenge Requirements Compliance
+## Repository Overview
 
+- `notebooks/` – Model training and evaluation code  
+- `mlflow_artifacts/` – ROC curve and confusion matrix  
+- `presentation/` – Final presentation deck (PDF)  
+- `README.md` – Project documentation
+---
+
+## Challenge Requirements Compliance
 This project was developed as part of the **Codebasics Resume Project Challenge**, sponsored by **Databricks** and organised by **Indian Data Club (IDC)** and **Codebasics**.
 
 The project complies with the challenge requirements by:
