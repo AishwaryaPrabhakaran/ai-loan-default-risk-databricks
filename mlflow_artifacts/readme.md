@@ -1,4 +1,4 @@
-## 📊 Model Evaluation & Results Interpretation
+##  Model Evaluation & Results Interpretation
 
 This section summarizes the performance of the Logistic Regression model used for credit default risk prediction. Given the highly imbalanced nature of credit datasets, evaluation focuses on **risk ranking behavior** rather than raw accuracy.
 
@@ -36,7 +36,7 @@ A fixed probability threshold is not appropriate for credit risk decisions. High
 
 ---
 
-### 🔑 Key Insight
+### Key Insight
 
 - **Accuracy is not a meaningful success metric** for this problem.
 - The model’s value lies in its **relative risk scores**, not binary predictions.
@@ -47,7 +47,7 @@ A fixed probability threshold is not appropriate for credit risk decisions. High
 
 ---
 
-### ✅ Conclusion
+### Conclusion
 
 This evaluation demonstrates why **simple, interpretable models combined with business-aligned decision logic** are effective in real-world credit systems. Rather than optimizing for misleading metrics, the project prioritizes **risk ordering, transparency, and operational usability**.
 
